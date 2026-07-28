@@ -2,10 +2,11 @@ import { useState } from 'react'
 import usePosts from './hooks/usePosts'
 import PostList from './components/PostList'
 import PostDetail from './components/PostDetail'
+import PostForm from './components/PostForm'
 
 export default function App() {
-  const { posts, removePost, getPost } = usePosts()
-  // 'list' | 'detail'
+  const { posts, addPost, updatePost, removePost, getPost } = usePosts()
+  // 'list' | 'detail' | 'write' | 'edit'
   const [view, setView] = useState('list')
   const [selectedId, setSelectedId] = useState(null)
 
@@ -16,6 +17,16 @@ export default function App() {
 
   const goDetail = (id) => {
     setSelectedId(id)
+    setView('detail')
+  }
+
+  const handleCreate = (values) => {
+    const created = addPost(values)
+    goDetail(created.id)
+  }
+
+  const handleUpdate = (values) => {
+    updatePost(selectedId, values)
     setView('detail')
   }
 
@@ -32,14 +43,22 @@ export default function App() {
       </header>
       <main className="app-body">
         {view === 'list' && (
-          <PostList posts={posts} onSelect={goDetail} onWrite={() => {}} />
+          <PostList posts={posts} onSelect={goDetail} onWrite={() => setView('write')} />
         )}
         {view === 'detail' && (
           <PostDetail
             post={getPost(selectedId)}
             onBack={goList}
-            onEdit={() => {}}
+            onEdit={() => setView('edit')}
             onRemove={handleRemove}
+          />
+        )}
+        {view === 'write' && <PostForm onSubmit={handleCreate} onCancel={goList} />}
+        {view === 'edit' && (
+          <PostForm
+            post={getPost(selectedId)}
+            onSubmit={handleUpdate}
+            onCancel={() => setView('detail')}
           />
         )}
       </main>
