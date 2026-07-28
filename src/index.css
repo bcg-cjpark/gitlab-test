@@ -132,3 +132,38 @@ body {
 .btn.danger:hover {
   background: #fdf1f0;
 }
+
+/* 상세 */
+.detail-title {
+  margin: 0 0 8px;
+  font-size: 19px;
+}
+
+.detail-meta {
+  display: flex;
+  gap: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #eceef0;
+  font-size: 13px;
+  color: #888;
+}
+
+.detail-content {
+  padding: 20px 0;
+  min-height: 120px;
+  font-size: 14px;
+  line-height: 1.7;
+  white-space: pre-wrap;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 16px;
+  border-top: 1px solid #eceef0;
+}
+
+.actions-right {
+  display: flex;
+  gap: 8px;
+}
