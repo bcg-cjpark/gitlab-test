@@ -32,3 +32,103 @@ body {
   border-radius: 8px;
   padding: 20px;
 }
+
+/* 목록 */
+.list-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.count {
+  font-size: 13px;
+  color: #777;
+}
+
+.post-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.post-table th,
+.post-table td {
+  padding: 10px 8px;
+  border-bottom: 1px solid #eceef0;
+  text-align: left;
+}
+
+.post-table th {
+  background: #fafbfc;
+  font-weight: 600;
+  color: #555;
+  border-top: 2px solid #ccd0d5;
+}
+
+.col-no {
+  width: 60px;
+  text-align: center !important;
+  color: #888;
+}
+
+.col-author {
+  width: 90px;
+}
+
+.col-date {
+  width: 130px;
+  color: #888;
+}
+
+.empty {
+  padding: 40px 0;
+  text-align: center;
+  color: #999;
+  font-size: 14px;
+}
+
+.link {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color: #1a56db;
+  cursor: pointer;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  padding: 7px 14px;
+  border: 1px solid #ccd0d5;
+  border-radius: 5px;
+  background: #fff;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #f2f3f5;
+}
+
+.btn.primary {
+  background: #1a56db;
+  border-color: #1a56db;
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background: #164ac0;
+}
+
+.btn.danger {
+  color: #c0392b;
+  border-color: #e0b4ae;
+}
+
+.btn.danger:hover {
+  background: #fdf1f0;
+}
